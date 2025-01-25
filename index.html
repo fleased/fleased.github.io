@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game List</title>
+    <title>Fleazed Manifest Game List</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -183,7 +183,7 @@
             padding-bottom: 80px;
         }
 
-        .theme-toggle {
+        .theme-toggle, .discord-button {
             margin-bottom: 20px;
             cursor: pointer;
             padding: 10px;
@@ -195,7 +195,7 @@
             transition: background 0.3s;
         }
 
-        .theme-toggle:hover {
+        .theme-toggle:hover, .discord-button:hover {
             background: #1abc9c;
         }
 
@@ -272,6 +272,7 @@
     <div class="container">
         <h1>Game List</h1>
         <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+        <button class="discord-button" onclick="openDiscord()">Join Our Discord!</button>
         <div class="top-controls">
             <div>
                 <label for="itemsPerPage">Items per page:</label>
@@ -371,6 +372,11 @@
         function openSteamPage(id) {
             const steamURL = `https://store.steampowered.com/app/${id}`;
             window.open(steamURL, '_blank');
+        }
+
+        function openDiscord() {
+            const discordURL = "https://dc.gg/fleased"; // Replace with your Discord link
+            window.open(discordURL, '_blank');
         }
 
         function changePage(direction) {
