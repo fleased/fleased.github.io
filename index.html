@@ -289,7 +289,7 @@
         </div>
 
         <div class="search-box">
-            <input type="text" id="search" placeholder="Search by game name..." oninput="searchGames()">
+            <input type="text" id="search" placeholder="Search by game name or ID..." oninput="searchGames()">
         </div>
 
         <table>
@@ -323,8 +323,9 @@
         function renderGames() {
             const gameList = document.getElementById('gameList');
             const searchQuery = normalizeText(document.getElementById('search').value);
-            const filteredGames = Object.values(games).filter(game =>
-                normalizeText(game.name).includes(searchQuery)
+            const filteredGames = Object.values(games).filter(game => 
+                normalizeText(game.name).includes(searchQuery) || 
+                normalizeText(game.id.toString()).includes(searchQuery) // Search by ID
             );
 
             const totalItems = filteredGames.length;
