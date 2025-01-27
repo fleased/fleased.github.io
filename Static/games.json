@@ -1,0 +1,630 @@
+[
+    {
+        "appid": 400,
+        "name": "Portal"
+    },
+    {
+        "appid": 2620,
+        "name": "Call of Duty® (2003)"
+    },
+    {
+        "appid": 2630,
+        "name": "Call of Duty® 2"
+    },
+    {
+        "appid": 4000,
+        "name": "Garry's Mod"
+    },
+    {
+        "appid": 6880,
+        "name": "Just Cause"
+    },
+    {
+        "appid": 7940,
+        "name": "Call of Duty® 4: Modern Warfare® (2007)"
+    },
+    {
+        "appid": 8190,
+        "name": "Just Cause 2"
+    },
+    {
+        "appid": 10090,
+        "name": "Call of Duty: World at War"
+    },
+    {
+        "appid": 10180,
+        "name": "Call of Duty®: Modern Warfare® 2 (2009)"
+    },
+    {
+        "appid": 10680,
+        "name": "Aliens vs. Predator"
+    },
+    {
+        "appid": 12100,
+        "name": "Grand Theft Auto III"
+    },
+    {
+        "appid": 12110,
+        "name": "Grand Theft Auto: Vice City"
+    },
+    {
+        "appid": 12120,
+        "name": "Grand Theft Auto: San Andreas"
+    },
+    {
+        "appid": 12210,
+        "name": "Grand Theft Auto IV: The Complete Edition"
+    },
+    {
+        "appid": 15100,
+        "name": "Assassin's Creed"
+    },
+    {
+        "appid": 21000,
+        "name": "LEGO® Batman™: The Videogame"
+    },
+    {
+        "appid": 21690,
+        "name": "Resident Evil 5"
+    },
+    {
+        "appid": 32440,
+        "name": "LEGO® Star Wars™: The Complete Saga"
+    },
+    {
+        "appid": 32510,
+        "name": "LEGO® Star Wars™ III: The Clone Wars™"
+    },
+    {
+        "appid": 33120,
+        "name": "Alien Shooter 2: Reloaded"
+    },
+    {
+        "appid": 33230,
+        "name": "Assassin's Creed II"
+    },
+    {
+        "appid": 45740,
+        "name": "Dead Rising 2"
+    },
+    {
+        "appid": 48190,
+        "name": "Assassin's Creed Brotherhood"
+    },
+    {
+        "appid": 108710,
+        "name": "Alan Wake"
+    },
+    {
+        "appid": 202170,
+        "name": "Sleeping Dogs™"
+    },
+    {
+        "appid": 207610,
+        "name": "The Walking Dead"
+    },
+    {
+        "appid": 209160,
+        "name": "Call of Duty®: Ghosts"
+    },
+    {
+        "appid": 209650,
+        "name": "Call of Duty®: Advanced Warfare - Gold Edition"
+    },
+    {
+        "appid": 212580,
+        "name": "The Amazing Spider-Man"
+    },
+    {
+        "appid": 213330,
+        "name": "LEGO® Batman™ 2: DC Super Heroes"
+    },
+    {
+        "appid": 214510,
+        "name": "LEGO® The Lord of the Rings™"
+    },
+    {
+        "appid": 221040,
+        "name": "Resident Evil 6"
+    },
+    {
+        "appid": 225540,
+        "name": "Just Cause 3"
+    },
+    {
+        "appid": 228280,
+        "name": "Baldur's Gate: Enhanced Edition"
+    },
+    {
+        "appid": 228380,
+        "name": "Wreckfest"
+    },
+    {
+        "appid": 241930,
+        "name": "Middle-earth™: Shadow of Mordor™"
+    },
+    {
+        "appid": 242050,
+        "name": "Assassin's Creed IV Black Flag"
+    },
+    {
+        "appid": 242700,
+        "name": "Injustice: Gods Among Us Ultimate Edition"
+    },
+    {
+        "appid": 257350,
+        "name": "Baldur's Gate II: Enhanced Edition"
+    },
+    {
+        "appid": 261030,
+        "name": "The Walking Dead: Season Two"
+    },
+    {
+        "appid": 262240,
+        "name": "Suguri"
+    },
+    {
+        "appid": 265550,
+        "name": "Dead Rising 3"
+    },
+    {
+        "appid": 271590,
+        "name": "Grand Theft Auto V"
+    },
+    {
+        "appid": 281990,
+        "name": "Stellaris"
+    },
+    {
+        "appid": 285160,
+        "name": "LEGO® The Hobbit™"
+    },
+    {
+        "appid": 288160,
+        "name": "The Room"
+    },
+    {
+        "appid": 289650,
+        "name": "Assassin's Creed Unity"
+    },
+    {
+        "appid": 292730,
+        "name": "Call of Duty®: Infinite Warfare"
+    },
+    {
+        "appid": 304240,
+        "name": "Resident Evil"
+    },
+    {
+        "appid": 304430,
+        "name": "INSIDE"
+    },
+    {
+        "appid": 311210,
+        "name": "Call of Duty: Black Ops III"
+    },
+    {
+        "appid": 311560,
+        "name": "Assassin's Creed Rogue"
+    },
+    {
+        "appid": 312520,
+        "name": "Rain World"
+    },
+    {
+        "appid": 313690,
+        "name": "LEGO® Batman™ 3: Beyond Gotham"
+    },
+    {
+        "appid": 314650,
+        "name": "SpaceEngine"
+    },
+    {
+        "appid": 319510,
+        "name": "Five Nights at Freddy's"
+    },
+    {
+        "appid": 322170,
+        "name": "Geometry Dash"
+    },
+    {
+        "appid": 332800,
+        "name": "Five Nights at Freddy's 2"
+    },
+    {
+        "appid": 339340,
+        "name": "Resident Evil 0"
+    },
+    {
+        "appid": 359550,
+        "name": "Tom Clancy's Rainbow Six Siege"
+    },
+    {
+        "appid": 368260,
+        "name": "Marvel's Midnight Suns"
+    },
+    {
+        "appid": 368500,
+        "name": "Assassin's Creed Syndicate"
+    },
+    {
+        "appid": 381210,
+        "name": "Dead by Daylight"
+    },
+    {
+        "appid": 383150,
+        "name": "Dead Island Definitive Edition"
+    },
+    {
+        "appid": 389730,
+        "name": "TEKKEN 7"
+    },
+    {
+        "appid": 393080,
+        "name": "Call of Duty®: Modern Warfare® Remastered (2017)"
+    },
+    {
+        "appid": 405310,
+        "name": "LEGO® MARVEL's Avengers"
+    },
+    {
+        "appid": 418370,
+        "name": "Resident Evil 7 Biohazard"
+    },
+    {
+        "appid": 424840,
+        "name": "Little Nightmares"
+    },
+    {
+        "appid": 425580,
+        "name": "The Room Two"
+    },
+    {
+        "appid": 427190,
+        "name": "Dead Rising"
+    },
+    {
+        "appid": 429570,
+        "name": "The Walking Dead: Michonne"
+    },
+    {
+        "appid": 431960,
+        "name": "Wallpaper Engine"
+    },
+    {
+        "appid": 456750,
+        "name": "The Room Three"
+    },
+    {
+        "appid": 460930,
+        "name": "Tom Clancy's Ghost Recon® Wildlands"
+    },
+    {
+        "appid": 476600,
+        "name": "Call of Duty: WWII"
+    },
+    {
+        "appid": 477160,
+        "name": "Human Fall Flat"
+    },
+    {
+        "appid": 517630,
+        "name": "Just Cause 4"
+    },
+    {
+        "appid": 536220,
+        "name": "The Walking Dead: A New Frontier"
+    },
+    {
+        "appid": 543460,
+        "name": "Dead Rising 4"
+    },
+    {
+        "appid": 546560,
+        "name": "Half-Life: Alyx"
+    },
+    {
+        "appid": 553850,
+        "name": "HELLDIVERS™ 2"
+    },
+    {
+        "appid": 588650,
+        "name": "Dead Cells"
+    },
+    {
+        "appid": 594570,
+        "name": "Total War: WARHAMMER II"
+    },
+    {
+        "appid": 594650,
+        "name": "Hunt: Showdown 1896"
+    },
+    {
+        "appid": 613100,
+        "name": "House Flipper"
+    },
+    {
+        "appid": 617160,
+        "name": "Home Sweet Home"
+    },
+    {
+        "appid": 627270,
+        "name": "Injustice™ 2"
+    },
+    {
+        "appid": 647830,
+        "name": "LEGO® MARVEL Super Heroes 2"
+    },
+    {
+        "appid": 699130,
+        "name": "World War Z"
+    },
+    {
+        "appid": 732690,
+        "name": "FIVE NIGHTS AT FREDDY'S: HELP WANTED"
+    },
+    {
+        "appid": 742420,
+        "name": "Saints Row"
+    },
+    {
+        "appid": 752590,
+        "name": "A Plague Tale: Innocence"
+    },
+    {
+        "appid": 812140,
+        "name": "Assassin's Creed Odyssey"
+    },
+    {
+        "appid": 814380,
+        "name": "Sekiro™: Shadows Die Twice"
+    },
+    {
+        "appid": 815370,
+        "name": "Green Hell"
+    },
+    {
+        "appid": 829110,
+        "name": "LEGO® DC Super-Villains"
+    },
+    {
+        "appid": 860510,
+        "name": "Little Nightmares II"
+    },
+    {
+        "appid": 863550,
+        "name": "HITMAN™ 2"
+    },
+    {
+        "appid": 866800,
+        "name": "The Walking Dead: The Final Season"
+    },
+    {
+        "appid": 870780,
+        "name": "Control Ultimate Edition"
+    },
+    {
+        "appid": 881020,
+        "name": "Granblue Fantasy: Relink"
+    },
+    {
+        "appid": 911400,
+        "name": "Assassin's Creed III Remastered"
+    },
+    {
+        "appid": 920210,
+        "name": "LEGO® Star Wars™: The Skywalker Saga"
+    },
+    {
+        "appid": 939850,
+        "name": "The Dark Pictures Anthology: Man of Medan"
+    },
+    {
+        "appid": 962130,
+        "name": "Grounded"
+    },
+    {
+        "appid": 962400,
+        "name": "Granny"
+    },
+    {
+        "appid": 967050,
+        "name": "Pacify"
+    },
+    {
+        "appid": 990080,
+        "name": "Hogwarts Legacy"
+    },
+    {
+        "appid": 1086940,
+        "name": "Baldur's Gate 3"
+    },
+    {
+        "appid": 1088850,
+        "name": "Marvel's Guardians of the Galaxy"
+    },
+    {
+        "appid": 1096570,
+        "name": "SONG OF HORROR"
+    },
+    {
+        "appid": 1144200,
+        "name": "Ready or Not"
+    },
+    {
+        "appid": 1172620,
+        "name": "Sea of Thieves"
+    },
+    {
+        "appid": 1182900,
+        "name": "A Plague Tale: Requiem"
+    },
+    {
+        "appid": 1196590,
+        "name": "Resident Evil Village"
+    },
+    {
+        "appid": 1222140,
+        "name": "Detroit: Become Human"
+    },
+    {
+        "appid": 1238810,
+        "name": "Battlefield™ V"
+    },
+    {
+        "appid": 1238820,
+        "name": "Battlefield 3™"
+    },
+    {
+        "appid": 1238840,
+        "name": "Battlefield™ 1"
+    },
+    {
+        "appid": 1238860,
+        "name": "Battlefield 4™"
+    },
+    {
+        "appid": 1352930,
+        "name": "勇敢的哈克（HAAK）"
+    },
+    {
+        "appid": 1359090,
+        "name": "Zero Hour"
+    },
+    {
+        "appid": 1361320,
+        "name": "The Room 4: Old Sins"
+    },
+    {
+        "appid": 1364780,
+        "name": "Street Fighter™ 6"
+    },
+    {
+        "appid": 1404210,
+        "name": "Red Dead Online"
+    },
+    {
+        "appid": 1426210,
+        "name": "It Takes Two"
+    },
+    {
+        "appid": 1462040,
+        "name": "FINAL FANTASY VII REMAKE INTERGRADE"
+    },
+    {
+        "appid": 1465360,
+        "name": "SnowRunner"
+    },
+    {
+        "appid": 1490890,
+        "name": "Demon Slayer -Kimetsu no Yaiba- The Hinokami Chronicles"
+    },
+    {
+        "appid": 1517290,
+        "name": "Battlefield™ 2042"
+    },
+    {
+        "appid": 1557740,
+        "name": "ROUNDS"
+    },
+    {
+        "appid": 1577120,
+        "name": "The Quarry"
+    },
+    {
+        "appid": 1659420,
+        "name": "UNCHARTED™: Legacy of Thieves Collection"
+    },
+    {
+        "appid": 1660080,
+        "name": "Aloft"
+    },
+    {
+        "appid": 1672970,
+        "name": "Minecraft Dungeons"
+    },
+    {
+        "appid": 1721470,
+        "name": "Poppy Playtime"
+    },
+    {
+        "appid": 1731460,
+        "name": "LEGO® Brawls"
+    },
+    {
+        "appid": 1817490,
+        "name": "Poppy Playtime - Chapter 2"
+    },
+    {
+        "appid": 1846380,
+        "name": "Need for Speed™ Unbound"
+    },
+    {
+        "appid": 1850740,
+        "name": "Ghost Watchers"
+    },
+    {
+        "appid": 1928870,
+        "name": "Minecraft Legends"
+    },
+    {
+        "appid": 1938090,
+        "name": "Call of Duty®: Black Ops 6"
+    },
+    {
+        "appid": 1943950,
+        "name": "Escape the Backrooms"
+    },
+    {
+        "appid": 1966720,
+        "name": "Lethal Company"
+    },
+    {
+        "appid": 1985810,
+        "name": "Call of Duty®: Black Ops Cold War"
+    },
+    {
+        "appid": 1985820,
+        "name": "Call of Duty®: Vanguard"
+    },
+    {
+        "appid": 2000950,
+        "name": "Call of Duty®: Modern Warfare®"
+    },
+    {
+        "appid": 2012510,
+        "name": "Stormgate"
+    },
+    {
+        "appid": 2050650,
+        "name": "Resident Evil 4"
+    },
+    {
+        "appid": 2061250,
+        "name": "クレヨンしんちゃん「オラと博士の夏休み」～おわらない七日間の旅～"
+    },
+    {
+        "appid": 2110820,
+        "name": "Granny Remake"
+    },
+    {
+        "appid": 2440510,
+        "name": "Forza Motorsport"
+    },
+    {
+        "appid": 2593370,
+        "name": "The Hungry Lamb: Traveling in the Late Ming Dynasty"
+    },
+    {
+        "appid": 2738380,
+        "name": "Internet Cafe & Supermarket Simulator 2024"
+    },
+    {
+        "appid": 2878980,
+        "name": "NBA 2K25"
+    },
+    {
+        "appid": 2909110,
+        "name": "Nuclear Nightmare"
+    }
+]
