@@ -311,7 +311,7 @@
         let itemsPerPage = 50;
 
         async function fetchGames() {
-            const response = await fetch('https://fmg.pages.dev/Static/gameslow.json');
+            const response = await fetch('https://raw.githubusercontent.com/fleased/fleased.github.io/refs/heads/main/Static/gameslow.json');
             games = await response.json();
             renderGames();
         }
