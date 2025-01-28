@@ -656,6 +656,10 @@
         "name": "Battlefield 4™"
     },
     {
+        "appid": 1250410,
+        "name": "Microsoft Flight Simulator 40th Anniversary Edition"
+    },
+    {
         "appid": 1352930,
         "name": "勇敢的哈克（HAAK）"
     },
@@ -782,6 +786,10 @@
     {
         "appid": 2440510,
         "name": "Forza Motorsport"
+    },
+    {
+        "appid": 2537590,
+        "name": "Microsoft Flight Simulator 2024"
     },
     {
         "appid": 2593370,
