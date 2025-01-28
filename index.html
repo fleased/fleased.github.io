@@ -28,6 +28,12 @@
       font-size: 2rem;
     }
 
+    header .button-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
     header input {
       width: 300px;
       padding: 10px;
@@ -124,8 +130,8 @@
       background-color: transparent;
     }
 
-    /* Style for the Join Our Discord button (matching pagination button) */
-    .joinDiscordBtn {
+    /* Style for the additional buttons */
+    .actionButton {
       padding: 10px 15px;
       border: none;
       border-radius: 8px;
@@ -137,7 +143,7 @@
       transition: background-color 0.2s ease, transform 0.2s ease;
     }
 
-    .joinDiscordBtn:hover {
+    .actionButton:hover {
       background-color: #555;
       transform: scale(1.05);
     }
@@ -145,11 +151,16 @@
 </head>
 <body>
   <header>
-    <h1>Game List</h1>
-    <div style="display: flex; align-items: center; gap: 10px;">
+    <h1>Game List [FM]</h1>
+    <div class="button-container">
+      <!-- Infos Button -->
+      <button class="actionButton" onclick="window.open('https://fmg.pages.dev/infos', '_blank')">Infos</button>
+
+      <!-- Search Bar -->
       <input type="text" id="searchBar" placeholder="Search by Name or AppID...">
-      <!-- Join Our Discord button styled like page navigation buttons -->
-      <button class="joinDiscordBtn" onclick="window.open('https://dc.gg/fleased', '_blank')">Join Our Discord</button>
+
+      <!-- Join Our Discord Button -->
+      <button class="actionButton" onclick="window.open('https://dc.gg/fleased', '_blank')">Join Our Discord</button>
     </div>
   </header>
   <nav id="paginationTop"></nav>
@@ -251,5 +262,5 @@
       }
     });
   </script>
-</body>
+<!-- Cloudflare Pages Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "5b634a5d291049e389d31b422b000bf3"}'></script><!-- Cloudflare Pages Analytics --></body>
 </html>
