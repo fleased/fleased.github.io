@@ -1,11 +1,103 @@
 [
     {
+        "appid": 10,
+        "name": "Counter-Strike"
+    },
+    {
+        "appid": 20,
+        "name": "Team Fortress Classic"
+    },
+    {
+        "appid": 30,
+        "name": "Day of Defeat"
+    },
+    {
+        "appid": 70,
+        "name": "Half-Life"
+    },
+    {
+        "appid": 100,
+        "name": "Counter-Strike: Condition Zero"
+    },
+    {
+        "appid": 130,
+        "name": "Half-Life: Blue Shift"
+    },
+    {
+        "appid": 220,
+        "name": "Half-Life 2"
+    },
+    {
+        "appid": 240,
+        "name": "Counter-Strike: Source"
+    },
+    {
+        "appid": 280,
+        "name": "Half-Life: Source"
+    },
+    {
+        "appid": 300,
+        "name": "Day of Defeat: Source"
+    },
+    {
+        "appid": 360,
+        "name": "Half-Life Deathmatch: Source"
+    },
+    {
         "appid": 400,
         "name": "Portal"
     },
     {
+        "appid": 440,
+        "name": "Team Fortress 2"
+    },
+    {
+        "appid": 500,
+        "name": "Left 4 Dead"
+    },
+    {
+        "appid": 550,
+        "name": "Left 4 Dead 2"
+    },
+    {
+        "appid": 570,
+        "name": "Dota 2"
+    },
+    {
         "appid": 620,
         "name": "Portal 2"
+    },
+    {
+        "appid": 730,
+        "name": "Counter-Strike 2"
+    },
+    {
+        "appid": 1250,
+        "name": "Killing Floor"
+    },
+    {
+        "appid": 2130,
+        "name": "Dark Messiah of Might & Magic"
+    },
+    {
+        "appid": 2200,
+        "name": "Quake III Arena"
+    },
+    {
+        "appid": 2210,
+        "name": "Quake 4"
+    },
+    {
+        "appid": 2280,
+        "name": "DOOM + DOOM II"
+    },
+    {
+        "appid": 2310,
+        "name": "Quake"
+    },
+    {
+        "appid": 2320,
+        "name": "Quake II"
     },
     {
         "appid": 2620,
@@ -16,12 +108,88 @@
         "name": "Call of Duty® 2"
     },
     {
+        "appid": 2640,
+        "name": "Call of Duty: United Offensive"
+    },
+    {
+        "appid": 2800,
+        "name": "X2: The Threat"
+    },
+    {
+        "appid": 2820,
+        "name": "X3: Terran Conflict"
+    },
+    {
+        "appid": 2990,
+        "name": "FlatOut 2"
+    },
+    {
+        "appid": 3020,
+        "name": "Call of Juarez"
+    },
+    {
+        "appid": 3130,
+        "name": "Men of War: Red Tide"
+    },
+    {
+        "appid": 3320,
+        "name": "Insaniquarium Deluxe"
+    },
+    {
+        "appid": 3480,
+        "name": "Peggle Deluxe"
+    },
+    {
+        "appid": 3590,
+        "name": "Plants vs. Zombies GOTY Edition"
+    },
+    {
         "appid": 4000,
         "name": "Garry's Mod"
     },
     {
+        "appid": 4760,
+        "name": "Rome: Total War™ - Collection"
+    },
+    {
+        "appid": 6000,
+        "name": "STAR WARS™ Republic Commando™"
+    },
+    {
+        "appid": 6120,
+        "name": "Shank"
+    },
+    {
+        "appid": 6510,
+        "name": "Lost Planet™: Extreme Condition"
+    },
+    {
+        "appid": 6550,
+        "name": "Devil May Cry® 3 Special Edition"
+    },
+    {
+        "appid": 6850,
+        "name": "Hitman 2: Silent Assassin"
+    },
+    {
+        "appid": 6860,
+        "name": "Hitman: Blood Money"
+    },
+    {
         "appid": 6880,
         "name": "Just Cause"
+    },
+    {
+        "appid": 6900,
+        "name": "Hitman: Codename 47"
+    },
+    {
+        "appid": 7000,
+        "name": "Tomb Raider: Legend"
+    },
+    {
+        "appid": 7520,
+        "name": "Two Worlds II HD"
     },
     {
         "appid": 7940,
