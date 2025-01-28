@@ -4,14 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FM</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <title>Gamelist [FM]</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Noto Sans', sans-serif;
+      font-family: Arial, sans-serif;
       background-color: #121212;
       color: #f0f0f0;
     }
@@ -30,12 +28,6 @@
       margin: 0;
       font-size: 2rem;
       text-shadow: 0 0 10px #4bd1ff, 0 0 20px #4bd1ff;
-    }
-
-    header .button-container {
-      display: flex;
-      align-items: center;
-      gap: 10px;
     }
 
     header input {
@@ -70,8 +62,6 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      height: 200px; /* Set height for consistency */
-      cursor: pointer;
     }
 
     .gameCard:hover {
@@ -103,7 +93,7 @@
       gap: 10px;
       margin: 30px 0;
     }
-
+    
     nav button {
       padding: 10px 15px;
       border: none;
@@ -115,26 +105,26 @@
       cursor: pointer;
       transition: background-color 0.2s ease, transform 0.2s ease;
     }
-
+    
     nav button:hover {
       background-color: #555;
       transform: scale(1.05);
     }
-
+    
     nav button:disabled {
       background-color: #555;
       color: #aaa;
       cursor: default;
     }
-
+    
     nav .ellipsis {
       font-size: 1.2rem;
       color: #aaa;
       pointer-events: none;
       background-color: transparent;
     }
-
-    /* Style for the additional buttons */
+	
+	/* Style for the additional buttons */
     .actionButton {
       padding: 10px 15px;
       border: none;
@@ -209,65 +199,69 @@
         updatePagination(totalPages);
       }
 
-      function displayGames(gamesToDisplay) {
-        gameList.innerHTML = gamesToDisplay.length === 0
-          ? '<p>No games found.</p>'
-          : gamesToDisplay.map(game => {
-              let decodedName = game.name;
-              try {
-                decodedName = decodeURIComponent(escape(game.name));
-              } catch {}
+    function displayGames(gamesToDisplay) {
+      gameList.innerHTML = gamesToDisplay.length === 0
+        ? '<p>No games found.</p>'
+        : gamesToDisplay.map(game => {
+            let decodedName = game.name;
+            try {
+              decodedName = decodeURIComponent(escape(game.name));
+            } catch {}
+    
+            const gameImageURL = `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${game.appid}/header.jpg?quality=lossless`;
+            const placeholderURL = `https://fmg.pages.dev/assets/placeholder.png`;
+    
+            const img = new Image();
+            img.src = gameImageURL;
+    
+            return `
+              <div class="gameCard">
+                <img src="${gameImageURL}" 
+                     alt="${decodedName}" 
+                     onerror="this.src='${placeholderURL}'; this.onerror=null;">
+                <div class="gameInfo">${decodedName}</div>
+                <div class="gameAppid">AppID: ${game.appid}</div>
+              </div>`;
+          }).join('');
+    }
 
-              // Each game card is now a button that copies the app_id when clicked
-              return `
-                <button class="gameCard" onclick="copyAppId('${game.appid}')">
-                  <div class="gameInfo">${decodedName}</div>
-                  <div class="gameAppid">AppID: ${game.appid}</div>
-                </button>`;
-            }).join('');
-      }
-
-      function copyAppId(appid) {
-        navigator.clipboard.writeText(appid).then(() => {
-          alert(`AppID ${appid} copied to clipboard!`);
-        }).catch(error => {
-          console.error('Error copying AppID:', error);
-        });
-      }
-
-      function updatePagination(totalPages) {
-        const createPagination = (navElement) => {
-          navElement.innerHTML = '';
-      
-          const addButton = (label, page, disabled = false, ellipsis = false) => {
-            const button = document.createElement('button');
-            button.textContent = label;
-            button.disabled = disabled;
-            button.className = ellipsis ? 'ellipsis' : '';
-            if (!disabled && !ellipsis) {
-              button.addEventListener('click', () => {
-                currentPage = page;
-                updateDisplay();
-              });
-            }
-            navElement.appendChild(button);
-          };
-      
-          addButton('<<', 1, currentPage === 1);
-          addButton('<', currentPage - 1, currentPage === 1);
-          if (currentPage > 3) addButton('...', 1, true, true);
-          for (let i = Math.max(1, currentPage - 2); i <= Math.min(totalPages, currentPage + 2); i++) {
-            addButton(i, i, i === currentPage);
+    function updatePagination(totalPages) {
+      const createPagination = (navElement) => {
+        navElement.innerHTML = '';
+    
+        const addButton = (label, page, disabled = false, ellipsis = false) => {
+          const button = document.createElement('button');
+          button.textContent = label;
+          button.disabled = disabled;
+          button.className = ellipsis ? 'ellipsis' : '';
+          if (!disabled && !ellipsis) {
+            button.addEventListener('click', () => {
+              currentPage = page;
+              updateDisplay();
+            });
           }
-          if (currentPage < totalPages - 2) addButton('...', totalPages, true, true);
-          addButton('>', currentPage + 1, currentPage === totalPages);
-          addButton('>>', totalPages, currentPage === totalPages);
+          navElement.appendChild(button);
         };
-      
-        createPagination(paginationTop);
-        createPagination(paginationBottom);
-      }
+    
+        addButton('<<', 1, currentPage === 1);
+    
+        addButton('<', currentPage - 1, currentPage === 1);
+    
+        if (currentPage > 3) addButton('...', 1, true, true);
+        for (let i = Math.max(1, currentPage - 2); i <= Math.min(totalPages, currentPage + 2); i++) {
+          addButton(i, i, i === currentPage);
+        }
+        if (currentPage < totalPages - 2) addButton('...', totalPages, true, true);
+    
+        addButton('>', currentPage + 1, currentPage === totalPages);
+    
+        addButton('>>', totalPages, currentPage === totalPages);
+      };
+    
+      createPagination(paginationTop);
+      createPagination(paginationBottom);
+    }
     });
   </script>
-<!-- Cloudflare Pages Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "5b634a5d291049e389d31b422b000bf3"}'></script><!-- Cloudflare Pages Analytics --></body>
+<!-- Cloudflare Pages Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "12ebf3a7cd6e4ebeba7c0295edb9c58b"}'></script><!-- Cloudflare Pages Analytics --></body>
 </html>
