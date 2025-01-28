@@ -175,7 +175,7 @@
       const itemsPerPage = 50;
       let currentPage = 1;
 
-      fetch('https://fleased.github.io/Static/games.json')
+      fetch('https://raw.githubusercontent.com/fleased/fleased.github.io/refs/heads/main/Static/games.json')
         .then(response => response.json())
         .then(data => {
           games = data;
