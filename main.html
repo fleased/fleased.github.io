@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FM</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: #f0f0f0;
+    }
+
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      padding: 20px;
+      background-color: #1e1e1e;
+      border-bottom: 2px solid #444;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    header .button-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    header input {
+      width: 300px;
+      padding: 10px;
+      border: 1px solid #444;
+      border-radius: 5px;
+      background-color: #333;
+      color: #fff;
+    }
+
+    header input:focus {
+      outline: none;
+      border-color: #555;
+    }
+
+    #gameList {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .gameCard {
+      background-color: #1e1e1e;
+      border: 1px solid #333;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      height: 200px; /* Set height for consistency */
+      cursor: pointer;
+    }
+
+    .gameCard:hover {
+      transform: scale(1.01);
+    }
+
+    .gameCard img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .gameCard .gameInfo,
+    .gameCard .gameAppid {
+      padding: 10px;
+      font-size: 1rem;
+      color: #fff;
+    }
+
+    .gameCard .gameAppid {
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin: 30px 0;
+    }
+
+    nav button {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: bold;
+      background-color: #333;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    nav button:hover {
+      background-color: #555;
+      transform: scale(1.05);
+    }
+
+    nav button:disabled {
+      background-color: #555;
+      color: #aaa;
+      cursor: default;
+    }
+
+    nav .ellipsis {
+      font-size: 1.2rem;
+      color: #aaa;
+      pointer-events: none;
+      background-color: transparent;
+    }
+
+    /* Style for the additional buttons */
+    .actionButton {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: bold;
+      background-color: #333;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .actionButton:hover {
+      background-color: #555;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Game List</h1>
+    <div class="button-container">
+      <!-- Infos Button -->
+      <button class="actionButton" onclick="window.open('https://fmg.pages.dev/infos', '_blank')">Infos</button>
+
+      <!-- Search Bar -->
+      <input type="text" id="searchBar" placeholder="Search by Name or AppID...">
+
+      <!-- Join Our Discord Button -->
+      <button class="actionButton" onclick="window.open('https://dc.gg/fleased', '_blank')">Join Our Discord</button>
+    </div>
+  </header>
+  <nav id="paginationTop"></nav>
+  <main id="gameList"></main>
+  <nav id="paginationBottom"></nav>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const gameList = document.getElementById('gameList');
+      const paginationTop = document.getElementById('paginationTop');
+      const paginationBottom = document.getElementById('paginationBottom');
+      const searchBar = document.getElementById('searchBar');
+
+      let games = [];
+      const itemsPerPage = 50;
+      let currentPage = 1;
+
+      fetch('https://fleased.github.io/Static/games.json')
+        .then(response => response.json())
+        .then(data => {
+          games = data;
+          updateDisplay();
+        })
+        .catch(error => console.error('Error fetching game data:', error));
+
+      searchBar.addEventListener('input', () => {
+        currentPage = 1;
+        updateDisplay();
+      });
+
+      function updateDisplay() {
+        const searchTerm = searchBar.value.trim().toLowerCase();
+        const filteredGames = games.filter(game =>
+          game.appid.toString().includes(searchTerm) || game.name.toLowerCase().includes(searchTerm)
+        );
+
+        const totalPages = Math.ceil(filteredGames.length / itemsPerPage);
+        displayGames(filteredGames.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage));
+        updatePagination(totalPages);
+      }
+
+      function displayGames(gamesToDisplay) {
+        gameList.innerHTML = gamesToDisplay.length === 0
+          ? '<p>No games found.</p>'
+          : gamesToDisplay.map(game => {
+              let decodedName = game.name;
+              try {
+                decodedName = decodeURIComponent(escape(game.name));
+              } catch {}
+
+              // Each game card is now a button that copies the app_id when clicked
+              return `
+                <button class="gameCard" onclick="copyAppId('${game.appid}')">
+                  <div class="gameInfo">${decodedName}</div>
+                  <div class="gameAppid">AppID: ${game.appid}</div>
+                </button>`;
+            }).join('');
+      }
+
+      function copyAppId(appid) {
+        navigator.clipboard.writeText(appid).then(() => {
+          alert(`AppID ${appid} copied to clipboard!`);
+        }).catch(error => {
+          console.error('Error copying AppID:', error);
+        });
+      }
+
+      function updatePagination(totalPages) {
+        const createPagination = (navElement) => {
+          navElement.innerHTML = '';
+      
+          const addButton = (label, page, disabled = false, ellipsis = false) => {
+            const button = document.createElement('button');
+            button.textContent = label;
+            button.disabled = disabled;
+            button.className = ellipsis ? 'ellipsis' : '';
+            if (!disabled && !ellipsis) {
+              button.addEventListener('click', () => {
+                currentPage = page;
+                updateDisplay();
+              });
+            }
+            navElement.appendChild(button);
+          };
+      
+          addButton('<<', 1, currentPage === 1);
+          addButton('<', currentPage - 1, currentPage === 1);
+          if (currentPage > 3) addButton('...', 1, true, true);
+          for (let i = Math.max(1, currentPage - 2); i <= Math.min(totalPages, currentPage + 2); i++) {
+            addButton(i, i, i === currentPage);
+          }
+          if (currentPage < totalPages - 2) addButton('...', totalPages, true, true);
+          addButton('>', currentPage + 1, currentPage === totalPages);
+          addButton('>>', totalPages, currentPage === totalPages);
+        };
+      
+        createPagination(paginationTop);
+        createPagination(paginationBottom);
+      }
+    });
+  </script>
+</body>
+</html>
