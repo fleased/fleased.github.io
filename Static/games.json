@@ -312,6 +312,10 @@
         "name": "Wreckfest"
     },
     {
+        "appid": 238320,
+        "name": "Outlast"
+    },
+    {
         "appid": 241930,
         "name": "Middle-earth™: Shadow of Mordor™"
     },
@@ -438,6 +442,10 @@
     {
         "appid": 405310,
         "name": "LEGO® MARVEL's Avengers"
+    },
+    {
+        "appid": 414700,
+        "name": "Outlast 2"
     },
     {
         "appid": 418370,
@@ -658,6 +666,10 @@
     {
         "appid": 1250410,
         "name": "Microsoft Flight Simulator 40th Anniversary Edition"
+    },
+    {
+        "appid": 1304930,
+        "name": "The Outlast Trials"
     },
     {
         "appid": 1352930,
