@@ -133,10 +133,30 @@
            border-color : rgba(59 ,130 ,246 ,0.3) ;
            color : white ;
        }
+
+       /* Back button styles */
+       .back-button {
+           position: absolute;
+           top: 16px; /* Adjust as needed */
+           left: 16px; /* Adjust as needed */
+           background-color: rgba(59 ,130 ,246 ,0.8); /* Semi-transparent blue */
+           color:white; 
+           padding:.5rem .75rem; 
+           border-radius:.375rem; 
+           text-decoration:none; 
+           transition:.3s; 
+       }
+
+       .back-button:hover {
+           background-color:#3b82f6; /* Darker blue on hover */
+       }
    </style>
 </head>
 
 <body class="flex flex-col min-h-screen">
+    <!-- Back to Main Site Button -->
+    <a href="https://fmg.pages.dev" class="back-button">Back to Main Site</a>
+
     <main role="main" aria-label="Fleazed Manifest" class="flex-grow flex items-center justify-center p-4">
         <div role="form" aria-description="Fleazed Manifest Steam manifest & file tool" class="w-full max-w-md space-y-6">
             <h1 tabindex="0" class="text-center text-3xl font-semibold tracking-wide mb-4">Fleazed Manifest</h1>
