@@ -67,10 +67,6 @@
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        .info-modal {
-            animation: modalFadeIn 0.3s ease;
-        }
-        
         @keyframes modalFadeIn {
             from {
                 opacity: 0;
@@ -148,10 +144,9 @@
             <div class="endpoint-toggle">
                 <button id="repo1EndpointBtn" class="endpoint-btn active">FleazedDB</button>
                 <button id="repo2EndpointBtn" class="endpoint-btn">BigSizerDB</button>
-           <!--     <button id="repo3EndpointBtn" class="endpoint-btn">InDev[NoManifest]</button>  -->
-            </div>
+           </div>
 
-            <div class="blur-bg rounded-2xl p-6 space-y-4">
+           <div class="blur-bg rounded-2xl p-6 space-y-4">
                 <form id="fileForm" class="flex gap-3">
                     <input type="text" id="id" aria-label="Enter ID" aria-describedby="idHelp" class="flex-1 px-4 py-3.5 rounded-xl input-field text-white/90 text-lg outline-none" placeholder="e.g. 314650" required>
                     <span id="idHelp" class="sr-only">Enter an ID to download the file</span>
@@ -167,7 +162,7 @@
 
       <footer class="text-center p-6 text-white text-sm opacity-80 hover:opacity-100 transition-opacity">
           <span class="text-xs opacity-70">
-              © 2025 Fleazed Manifest. All rights reserved.
+              ©2025 Fleazed Manifest. All rights reserved.
               <br>
           </span>
       </footer>
@@ -176,8 +171,7 @@
           // Supported Repositories
           const REPOSITORIES = {
               repo1 : "johnnk3001/FleazedDB",
-              repo2 : "fleased/fleased.github.io",
-              repo3 : "yetanotheruser/YetAnotherRepo"
+              repo2 : "fleased/fleased.github.io"
           };
 
           let activeRepo = "repo1"; // Default repository
@@ -187,21 +181,12 @@
               activeRepo = "repo1";
               document.getElementById("repo1EndpointBtn").classList.add("active");
               document.getElementById("repo2EndpointBtn").classList.remove("active");
-              document.getElementById("repo3EndpointBtn").classList.remove("active");
           });
 
           document.getElementById("repo2EndpointBtn").addEventListener("click", () => {
               activeRepo = "repo2";
               document.getElementById("repo1EndpointBtn").classList.remove("active");
               document.getElementById("repo2EndpointBtn").classList.add("active");
-              document.getElementById("repo3EndpointBtn").classList.remove("active");
-          });
-
-          document.getElementById("repo3EndpointBtn").addEventListener("click", () => {
-              activeRepo = "repo3";
-              document.getElementById("repo1EndpointBtn").classList.remove("active");
-              document.getElementById("repo2EndpointBtn").classList.remove("active");
-              document.getElementById("repo3EndpointBtn").classList.add("active");
           });
 
           // Log function
