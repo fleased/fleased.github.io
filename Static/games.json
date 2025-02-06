@@ -228,8 +228,16 @@
         "name": "Grand Theft Auto IV: The Complete Edition"
     },
     {
+        "appid": 13520,
+        "name": "Far Cry®"
+    },
+    {
         "appid": 15100,
         "name": "Assassin's Creed"
+    },
+    {
+        "appid": 19900,
+        "name": "Far Cry® 2"
     },
     {
         "appid": 21000,
@@ -296,6 +304,10 @@
         "name": "LEGO® The Lord of the Rings™"
     },
     {
+        "appid": 220240,
+        "name": "Far Cry 3"
+    },
+    {
         "appid": 221040,
         "name": "Resident Evil 6"
     },
@@ -310,6 +322,10 @@
     {
         "appid": 228380,
         "name": "Wreckfest"
+    },
+    {
+        "appid": 233270,
+        "name": "Far Cry 3 - Blood Dragon"
     },
     {
         "appid": 238320,
@@ -368,6 +384,10 @@
         "name": "Call of Duty®: Infinite Warfare"
     },
     {
+        "appid": 298110,
+        "name": "Far Cry® 4"
+    },
+    {
         "appid": 304240,
         "name": "Resident Evil"
     },
@@ -422,6 +442,10 @@
     {
         "appid": 368500,
         "name": "Assassin's Creed Syndicate"
+    },
+    {
+        "appid": 371660,
+        "name": "Far Cry® Primal"
     },
     {
         "appid": 381210,
@@ -502,6 +526,10 @@
     {
         "appid": 546560,
         "name": "Half-Life: Alyx"
+    },
+    {
+        "appid": 552520,
+        "name": "Far Cry® 5"
     },
     {
         "appid": 553850,
@@ -598,6 +626,10 @@
     {
         "appid": 939850,
         "name": "The Dark Pictures Anthology: Man of Medan"
+    },
+    {
+        "appid": 939960,
+        "name": "Far Cry® New Dawn"
     },
     {
         "appid": 962130,
@@ -798,6 +830,10 @@
     {
         "appid": 2110820,
         "name": "Granny Remake"
+    },
+    {
+        "appid": 2369390,
+        "name": "Far Cry® 6"
     },
     {
         "appid": 2440510,
