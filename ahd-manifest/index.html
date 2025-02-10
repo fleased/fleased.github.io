@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game List [AHD]</title>
+  <link rel="icon" href="/icon.gif" type="image/gif">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Noto Sans', sans-serif;
+      background-color: #121212;
+      color: #f0f0f0;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background-color: #1e1e1e;
+      border-bottom: 2px solid #444;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      text-shadow: 0 0 10px #4bd1ff, 0 0 20px #4bd1ff;
+    }
+
+    .left-buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .search-bar {
+      padding: 5px;
+      border: 1px solid #444;
+      border-radius: 5px;
+      background-color: #333;
+      color: #fff;
+      width: 200px;
+    }
+
+    .search-bar:focus {
+      outline: none;
+      border-color: #555;
+    }
+
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 20px;
+    }
+
+    .actionButton {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: bold;
+      background-color: #333;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .actionButton:hover {
+      background-color: #555;
+      transform: scale(1.05);
+    }
+
+    .downloadButton {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: bold;
+      background-color: #333;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .downloadButton:hover {
+      background-color: #555;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="left-buttons">
+      <!-- Credits Button -->
+      <button class="actionButton" onclick="window.location.href='https://fmg.pages.dev/credits'">Credits</button>
+      <input type="text" id="searchBar" class="search-bar" placeholder="Search by Game Name...">
+    </div>
+    <h1>Game List [FM]</h1>
+        <!-- Join Our Discord Button -->
+    <button class="actionButton" onclick="window.open('https://dc.gg/fleased', '_blank')">Join Our Discord</button>
+  </header>
+
+  <div class="button-container" id="downloadButtons"></div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const downloadButtonsContainer = document.getElementById('downloadButtons');
+      const searchBar = document.getElementById('searchBar');
+
+      let games = [];
+
+      // Fetch the manifestahd.txt file
+      fetch('https://fmg.pages.dev/Static/manifestahd.txt')
+        .then(response => response.text())
+        .then(data => {
+          const lines = data.split('\n');
+          games = lines.map(line => {
+            const [googleDriveLink, gameName] = line.split(';');
+            return { googleDriveLink: googleDriveLink?.trim(), gameName: gameName?.trim() };
+          }).filter(game => game.googleDriveLink && game.gameName);
+
+          renderButtons(games); // Initial render
+        })
+        .catch(error => console.error('Error fetching manifestahd.txt:', error));
+
+      // Add search functionality
+      searchBar.addEventListener('input', () => {
+        const searchTerm = searchBar.value.trim().toLowerCase();
+        const filteredGames = games.filter(game =>
+          game.gameName.toLowerCase().includes(searchTerm)
+        );
+        renderButtons(filteredGames);
+      });
+
+      function renderButtons(gamesToRender) {
+        downloadButtonsContainer.innerHTML = gamesToRender
+          .map(game => `
+            <button class="downloadButton" onclick="window.location.href='/download?url=${encodeURIComponent(game.googleDriveLink)}'">
+              ${game.gameName}
+            </button>
+          `)
+          .join('');
+      }
+    });
+  </script>
+</body>
+</html>
