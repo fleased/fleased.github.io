@@ -144,7 +144,6 @@
             <div class="endpoint-toggle">
                 <button id="repo1EndpointBtn" class="endpoint-btn active">FleazedDB</button>
                 <button id="repo2EndpointBtn" class="endpoint-btn">BigSizerDB</button>
-                <button id="repo3EndpointBtn" class="endpoint-btn">Victor</button>
            </div>
 
            <div class="blur-bg rounded-2xl p-6 space-y-4">
@@ -173,7 +172,6 @@
           const REPOSITORIES = {
               repo1 : "johnnk3001/FleazedDB",
               repo2 : "fleased/fleased.github.io",
-              repo3 : "fleased/wiki474700000"
           };
 
           let activeRepo = "repo1"; // Default repository
@@ -189,12 +187,6 @@
               activeRepo = "repo2";
               document.getElementById("repo1EndpointBtn").classList.remove("active");
               document.getElementById("repo2EndpointBtn").classList.add("active");
-          });
-          document.getElementById("repo3EndpointBtn").addEventListener("click", () => {
-              activeRepo = "repo3";
-              document.getElementById("repo1EndpointBtn").classList.remove("active");
-              document.getElementById("repo2EndpointBtn").classList.remove("active");
-              document.getElementById("repo3EndpointBtn").classList.add("active");
           });
           // Log function
           function log(message) {
