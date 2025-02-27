@@ -1,253 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fleazed Manifest</title>
-    <link rel="icon" href="/icon.gif" type="image/gif">
-    <meta name="description" content="Fleazed Manifest is a powerful tool for downloading Steam manifests and files. Easily download game files with our streamlined tool.">
-    <meta name="keywords" content="Fleazed Manifest, FM, Steam manifest, file downloader, game files, Steam tools">
-    <meta property="og:title" content="Fleazed Manifest">
-    <meta property="og:description" content="Easily download Steam game manifests and files with our specialized tool.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://fmg.pages.dev/manifest">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-    <style>
-        body {
-            background-color: #0a0a0a;
-            min-height: 100vh;
-            color: #fff;
-        }
-
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwBAMAAAClLOS0AAAAElBMVEUAAAD8/vz08vT09PT09PT09PT09PSKb78gAAAABnRSTlMAHBwcHBzTxURFAAAAOklEQVQ4y2NgGAVDHjChAYaBsQJzHhCnARkwB0KxAxBnYxWBqeEHYnc08VU4xbHJY3MHLrfhcucIBwCJ3REPw/vHDgAAAABJRU5ErkJggg==");
-            opacity: 0.03;
-        }
-
-        .blur-bg {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        
-        .input-field {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
-            -moz-appearance: textfield;
-        }
-        
-        .input-field::-webkit-inner-spin-button,
-        .input-field::-webkit-outer-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-        }
-        
-        .input-field:focus {
-            background: rgba(255, 255, 255, 0.08);
-            border-color: rgba(255, 255, 255, 0.2);
-            box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
-        }
-        
-        .glow {
-            box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
-        }
-        
-        .log-entry {
-            animation: fadeSlideIn 0.3s ease;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        @keyframes modalFadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes fadeSlideIn {
-            from {
-                opacity: 0;
-                transform: translateY(-8px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: rgba(255, 255, 255, 0.02);
-            border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: rgba(255, 255, 255, 0.15);
-        }
-
-        .endpoint-toggle {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 1rem;
-        }
-        
-        .endpoint-btn {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.7);
-            padding: .4rem .75rem;
-           margin:.25rem ;
-           border-radius:.375rem ;
-           cursor:pointer ;
-           transition : all .3s ease ;
-       }
-       
-       .endpoint-btn:hover {
-           background : rgba(255 ,255 ,255 ,0.1) ;
-       }
-       
-       .endpoint-btn.active {
-           background : rgba(59 ,130 ,246 ,0.2) ;
-           border-color : rgba(59 ,130 ,246 ,0.3) ;
-           color : white ;
-       }
-   </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fleazed Manifest</title>
+  <link rel="icon" href="/icon.gif" type="image/gif" />
+  <meta name="description" content="Fleazed Manifest is a powerful tool for downloading Steam manifests and files. Easily download game files with our streamlined tool." />
+  <meta name="keywords" content="Fleazed Manifest, FM, Steam manifest, file downloader, game files, Steam tools" />
+  <meta property="og:title" content="Fleazed Manifest" />
+  <meta property="og:description" content="Easily download Steam game manifests and files with our specialized tool." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://fmg.pages.dev/manifest" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #0a0a0a;
+      min-height: 100vh;
+      color: #fff;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwBAMAAAClLOS0AAAAElBMVEUAAAD8/vz08vT09PT09PT09PT09PSKb78gAAAABnRSTlMAHBwcHBzTxURFAAAAOklEQVQ4y2NgGAVDHjChAYaBsQJzHhCnARkwB0KxAxBnYxWBqeEHYnc08VU4xbHJY3MHLrfhcucIBwCJ3REPw/vHDgAAAABJRU5ErkJggg==");
+      opacity: 0.03;
+    }
+    .blur-bg {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .input-field {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+      -moz-appearance: textfield;
+    }
+    .input-field::-webkit-inner-spin-button,
+    .input-field::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    .input-field:focus {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+    }
+    .glow {
+      box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+    }
+    .log-entry {
+      animation: fadeSlideIn 0.3s ease;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    @keyframes modalFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes fadeSlideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.02);
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+    .endpoint-toggle {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .endpoint-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.7);
+      padding: 0.4rem 0.75rem;
+      margin: 0.25rem;
+      border-radius: 0.375rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .endpoint-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+    .endpoint-btn.active {
+      background: rgba(59, 130, 246, 0.2);
+      border-color: rgba(59, 130, 246, 0.3);
+      color: white;
+    }
+  </style>
 </head>
-
 <body class="flex flex-col min-h-screen">
-    <main role="main" aria-label="Fleazed Manifest" class="flex-grow flex items-center justify-center p-4">
-        <div role="form" aria-description="Fleazed Manifest Steam manifest & file tool" class="w-full max-w-md space-y-6">
-            <h1 tabindex="0" class="text-center text-3xl font-semibold tracking-wide mb-4">Fleazed Manifest</h1>
+  <main role="main" aria-label="Fleazed Manifest" class="flex-grow flex items-center justify-center p-4">
+    <div role="form" aria-description="Fleazed Manifest Steam manifest & file tool" class="w-full max-w-md space-y-6">
+      <h1 tabindex="0" class="text-center text-3xl font-semibold tracking-wide mb-4">Fleazed Manifest</h1>
+      <div class="endpoint-toggle">
+        <button id="repo1EndpointBtn" class="endpoint-btn">FleazedDB</button>
+        <button id="repo2EndpointBtn" class="endpoint-btn">BigSizerDB</button>
+        <button id="victorEndpointBtn" class="endpoint-btn active">Victor</button>
+      </div>
+      <div class="blur-bg rounded-2xl p-6 space-y-4">
+        <form id="fileForm" class="flex gap-3">
+          <input type="text" id="id" aria-label="Enter ID" aria-describedby="idHelp" class="flex-1 px-4 py-3.5 rounded-xl input-field text-white/90 text-lg outline-none" placeholder="e.g. 314650" required />
+          <span id="idHelp" class="sr-only">Enter an ID to download the file</span>
+          <button type="submit" class="bg-blue-600/90 hover:bg-blue-600 text-white/90 font-medium py-3 px-6 rounded-xl transition-all duration-200 blur-bg whitespace-nowrap">
+            Download
+          </button>
+        </form>
+      </div>
+      <div id="logBox" class="mt-6 rounded-xl space-y-2 max-h-48 overflow-y-auto p-4 blur-bg hidden"></div>
+    </div>
+  </main>
+  <footer class="text-center p-6 text-white text-sm opacity-80 hover:opacity-100 transition-opacity">
+    <span class="text-xs opacity-70">
+      ©2025 Fleazed Manifest. All rights reserved.
+      <br />
+    </span>
+  </footer>
+  <script>
+    // Supported Repositories
+    const REPOSITORIES = {
+      repo1: "johnnk3001/FleazedDB",
+      repo2: "fleased/fleased.github.io",
+      victor: "victor" // label for your Victor API endpoint
+    };
 
-            <div class="endpoint-toggle">
-                <button id="repo1EndpointBtn" class="endpoint-btn active">FleazedDB</button>
-                <button id="repo2EndpointBtn" class="endpoint-btn">BigSizerDB</button>
-           </div>
+    let activeRepo = "victor"; // default repository set to Victor
 
-           <div class="blur-bg rounded-2xl p-6 space-y-4">
-                <form id="fileForm" class="flex gap-3">
-                    <input type="text" id="id" aria-label="Enter ID" aria-describedby="idHelp" class="flex-1 px-4 py-3.5 rounded-xl input-field text-white/90 text-lg outline-none" placeholder="e.g. 314650" required>
-                    <span id="idHelp" class="sr-only">Enter an ID to download the file</span>
-                    <button type="submit" class="bg-blue-600/90 hover:bg-blue-600 text-white/90 font-medium py-3 px-6 rounded-xl transition-all duration-200 blur-bg whitespace-nowrap">
-                        Download
-                    </button>
-                </form>
-              </div>
+    // Update active repository
+    document.getElementById("repo1EndpointBtn").addEventListener("click", () => {
+      activeRepo = "repo1";
+      document.getElementById("repo1EndpointBtn").classList.add("active");
+      document.getElementById("repo2EndpointBtn").classList.remove("active");
+      document.getElementById("victorEndpointBtn").classList.remove("active");
+    });
+    document.getElementById("repo2EndpointBtn").addEventListener("click", () => {
+      activeRepo = "repo2";
+      document.getElementById("repo1EndpointBtn").classList.remove("active");
+      document.getElementById("repo2EndpointBtn").classList.add("active");
+      document.getElementById("victorEndpointBtn").classList.remove("active");
+    });
+    document.getElementById("victorEndpointBtn").addEventListener("click", () => {
+      activeRepo = "victor";
+      document.getElementById("repo1EndpointBtn").classList.remove("active");
+      document.getElementById("repo2EndpointBtn").classList.remove("active");
+      document.getElementById("victorEndpointBtn").classList.add("active");
+    });
 
-              <div id="logBox" class="mt-6 rounded-xl space-y-2 max-h-48 overflow-y-auto p-4 blur-bg hidden"></div>
-          </div>
-      </main>
+    // Log function
+    function log(message) {
+      const logBox = document.getElementById("logBox");
+      if (logBox.classList.contains("hidden")) {
+        logBox.classList.remove("hidden");
+      }
+      const entry = document.createElement("div");
+      entry.className = "log-entry text-white/70 text-sm py-2.5 px-3 rounded-lg";
+      entry.textContent = new Date().toLocaleTimeString() + ": " + message;
+      logBox.insertBefore(entry, logBox.firstChild);
+    }
 
-      <footer class="text-center p-6 text-white text-sm opacity-80 hover:opacity-100 transition-opacity">
-          <span class="text-xs opacity-70">
-              ©2025 Fleazed Manifest. All rights reserved.
-              <br>
-          </span>
-      </footer>
+    // Form submission
+    document.getElementById("fileForm").addEventListener("submit", async function (e) {
+      e.preventDefault();
+      const id = document.getElementById("id").value;
+      const logBox = document.getElementById("logBox");
+      logBox.innerHTML = ""; // Clear logs
 
-      <script>
-          // Supported Repositories
-          const REPOSITORIES = {
-              repo1 : "johnnk3001/FleazedDB",
-              repo2 : "fleased/fleased.github.io",
-          };
-
-          let activeRepo = "repo1"; // Default repository
-
-          // Update active repository
-          document.getElementById("repo1EndpointBtn").addEventListener("click", () => {
-              activeRepo = "repo1";
-              document.getElementById("repo1EndpointBtn").classList.add("active");
-              document.getElementById("repo2EndpointBtn").classList.remove("active");
-          });
-
-          document.getElementById("repo2EndpointBtn").addEventListener("click", () => {
-              activeRepo = "repo2";
-              document.getElementById("repo1EndpointBtn").classList.remove("active");
-              document.getElementById("repo2EndpointBtn").classList.add("active");
-          });
-          // Log function
-          function log(message) {
-              const logBox = document.getElementById("logBox");
-              if (logBox.classList.contains("hidden")) {
-                  logBox.classList.remove("hidden");
+      setTimeout(() => {
+        log("Finding APP ID : " + id);
+        setTimeout(async () => {
+          try {
+            if (activeRepo === "victor") {
+              // Call our Cloudflare Pages Function for the Victor repo
+              const apiUrl = "https://fmg.pages.dev/api/getVictorAsset?id=" + id;
+              const response = await fetch(apiUrl);
+              if (!response.ok) {
+                throw new Error("Failed to fetch from Victor API");
               }
-              const entry = document.createElement("div");
-              entry.className = "log-entry text-white/70 text-sm py-2.5 px-3 rounded-lg";
-              entry.textContent = new Date().toLocaleTimeString() + ": " + message;
-              logBox.insertBefore(entry , logBox.firstChild);
+              const data = await response.json();
+              if (data.downloadUrl) {
+                const a = document.createElement("a");
+                a.href = data.downloadUrl;
+                a.download = `${id}.zip`;
+                a.click();
+                log(`Successfully found APP ID : ${id}`);
+              } else {
+                log(`No file found with ID : ${id}.`);
+              }
+            } else {
+              // Handle other repositories (repo1, repo2) as needed...
+              log(`Repository ${activeRepo} not implemented in this example.`);
+            }
+          } catch (error) {
+            log(`Error : ${error.message}`);
           }
-
-          // Form submission
-          document.getElementById("fileForm").addEventListener("submit", async function(e) {
-              e.preventDefault();
-              
-              const id = document.getElementById("id").value;
-
-              const logBox = document.getElementById("logBox");
-
-              // Clear logs immediately
-              logBox.innerHTML = ''; 
-
-              // Delay before showing the first log message
-              setTimeout(() => { 
-                  log('Finding APP ID : ' + id); 
-
-                  // Delay before checking file
-                  setTimeout(async () => { 
-                      try {
-                          const repo = REPOSITORIES[activeRepo];
-                          const GITHUB_API_URL = `https://api.github.com/repos/${repo}/releases/latest`;
-
-                          // Fetch the latest release info from GitHub API
-                          const response = await fetch(GITHUB_API_URL);
-                          if (!response.ok) {
-                              throw new Error("Failed to fetch release data");
-                          }
-                          const releaseData = await response.json();
-
-                          // Look for the file with the given ID
-                          const fileAsset = releaseData.assets.find(asset => asset.name === `${id}.zip`);
-                          if (fileAsset) {
-                              // File found; trigger the download
-                              const downloadUrl = fileAsset.browser_download_url;
-                              const a = document.createElement("a");
-                              a.href = downloadUrl;
-                              a.download = `${id}.zip`; // File will be saved as 'id.zip'
-                              a.click();
-                              log(`Successfully found APP ID : ${id}`);
-                          } else {
-                              log(`No file found with ID : ${id}.`);
-                          }
-                      } catch (error) {
-                          log(`Error : ${error.message}`);
-                      }
-                  },500); // Delay before checking for the file
-
-               },500); // Delay after clearing logs before logging finding message
-           });
-      </script>
+        }, 500);
+      }, 500);
+    });
+  </script>
+  <!-- Cloudflare Pages Analytics -->
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "5b634a5d291049e389d31b422b000bf3"}'></script>
 </body>
 </html>
