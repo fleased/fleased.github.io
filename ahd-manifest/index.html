@@ -138,7 +138,7 @@
       function renderButtons(gamesToRender) {
         downloadButtonsContainer.innerHTML = gamesToRender
           .map(game => `
-            <button class="downloadButton" onclick="window.location.href='/download?url=${encodeURIComponent(game.googleDriveLink)}'">
+            <button class="downloadButton" onclick="window.open('${game.googleDriveLink}', '_blank')">
               ${game.gameName}
             </button>
           `)
