@@ -1,3 +1,4 @@
+// File: api/getVictorAsset.js
 export async function onRequest({ request, env }) {
   const url = new URL(request.url);
   const id = url.searchParams.get('id');
