@@ -141,8 +141,7 @@
   </main>
   <footer class="text-center p-6 text-white text-sm opacity-80 hover:opacity-100 transition-opacity">
     <span class="text-xs opacity-70">
-      ©2025 Fleazed Manifest. All rights reserved.
-      <br />
+      ©2025 Fleazed Manifest. All rights reserved.<br />
     </span>
   </footer>
   <script>
@@ -155,7 +154,7 @@
 
     let activeRepo = "victor"; // default repository set to Victor
 
-    // Update active repository
+    // Update active repository buttons
     document.getElementById("repo1EndpointBtn").addEventListener("click", () => {
       activeRepo = "repo1";
       document.getElementById("repo1EndpointBtn").classList.add("active");
@@ -175,7 +174,7 @@
       document.getElementById("victorEndpointBtn").classList.add("active");
     });
 
-    // Log function
+    // Log function to display status messages
     function log(message) {
       const logBox = document.getElementById("logBox");
       if (logBox.classList.contains("hidden")) {
@@ -187,7 +186,7 @@
       logBox.insertBefore(entry, logBox.firstChild);
     }
 
-    // Form submission
+    // Form submission handler
     document.getElementById("fileForm").addEventListener("submit", async function (e) {
       e.preventDefault();
       const id = document.getElementById("id").value;
@@ -199,8 +198,8 @@
         setTimeout(async () => {
           try {
             if (activeRepo === "victor") {
-              // Call our Cloudflare Pages Function for the Victor repo
-              const apiUrl = "https://fmg.pages.dev/api/getVictorAsset?id=" + id;
+              // Use your backend at backend.fleased0.workers.dev for Victor repo
+              const apiUrl = "https://backend.fleased0.workers.dev/?id=" + id;
               const response = await fetch(apiUrl);
               if (!response.ok) {
                 throw new Error("Failed to fetch from Victor API");
@@ -216,7 +215,7 @@
                 log(`No file found with ID : ${id}.`);
               }
             } else {
-              // Handle other repositories (repo1, repo2) as needed...
+              // Fallback for other repositories if needed
               log(`Repository ${activeRepo} not implemented in this example.`);
             }
           } catch (error) {
@@ -226,7 +225,7 @@
       }, 500);
     });
   </script>
-  <!-- Cloudflare Pages Analytics -->
+  <!-- Cloudflare Pages Analytics (single instance) -->
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "5b634a5d291049e389d31b422b000bf3"}'></script>
 </body>
 </html>
