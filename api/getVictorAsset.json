@@ -1,4 +1,3 @@
-// File: api/getVictorAsset.js
 export async function onRequest({ request, env }) {
   const url = new URL(request.url);
   const id = url.searchParams.get('id');
@@ -10,13 +9,13 @@ export async function onRequest({ request, env }) {
   }
   const targetName = `${id}.zip`;
 
-  // Get your GitHub credentials from environment variables
-  const GITHUB_TOKEN = env.VICTOR_GIT;         // Set this in Pages settings
-  const GITHUB_OWNER = env.VICTOR_GIT_OWNER;      // Set this in Pages settings
-  const GITHUB_REPO = env.VICTOR_GIT_NAME;        // Set this in Pages settings
+  // Get GitHub credentials from environment variables (set in your Cloudflare Pages settings)
+  const GITHUB_TOKEN = env.VICTOR_GIT;
+  const GITHUB_OWNER = env.VICTOR_GIT_OWNER;
+  const GITHUB_REPO = env.VICTOR_GIT_NAME;
 
   const apiUrl = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/releases/latest`;
-  
+
   try {
     const response = await fetch(apiUrl, {
       headers: { Authorization: `token ${GITHUB_TOKEN}` }
